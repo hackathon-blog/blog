@@ -1,5 +1,11 @@
-const { newPost, allPosts } = require("../utilities/post_utilities");
+const {
+  newPost,
+  allPosts,
+  onePostById,
+  updateOnePostById
+} = require("../utilities/post_utilities");
 
+// create new post
 const addNewPost = (req, res) => {
   console.log(req.body);
   let post = newPost(req);
@@ -12,14 +18,18 @@ const addNewPost = (req, res) => {
   }
 };
 
-// const addNewPost = function(req) {
-//   let date = Date.now();
-//   // Set dates for this new post
-//   req.body.create_date = date;
-//   req.body.modified_date = date;
-//   return new Post(req.body);
-// };
+//get one post
+const getOnePost = (req, res) => {
+  onePostById(req.params.id).exec((err, post) => {
+    if (err) {
+      res.status(500);
+      return res.json({ error: err.message });
+    }
+    res.json(post);
+  });
+};
 
+// get all posts
 const getAllPosts = (req, res) => {
   allPosts(req).exec((err, posts) => {
     if (err) {
@@ -30,7 +40,22 @@ const getAllPosts = (req, res) => {
   });
 };
 
+//update one post
+const updateOnePost = (req, res) => {
+  updateOnePostById(req.params.id).then(post => {
+    post.title = req.body.title;
+    post.description = req.body.description;
+
+    post
+      .save()
+      .then(() => res.json(post))
+      .catch(err => res.status(500).json(`error: ${err}`));
+  });
+};
+
 module.exports = {
   addNewPost,
-  getAllPosts
+  getAllPosts,
+  getOnePost,
+  updateOnePost
 };
