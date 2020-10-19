@@ -5,14 +5,9 @@ const app = express();
 const port = process.env.PORT || 9991;
 require("dotenv").config();
 
-<<<<<<< HEAD
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
-=======
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-app.use(express.static('resources'))
->>>>>>> 9197c0fe7440571da8361b2efc7213a0f66dc91b
+app.use(express.static("resources"));
 
 const uri = process.env.ATLAS_URI;
 mongoose
@@ -34,10 +29,6 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9197c0fe7440571da8361b2efc7213a0f66dc91b
 app.use(express.json());
 
 //home route
@@ -45,8 +36,8 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
-app.get('/about', function (req, res) {
-  res.render('about');
+app.get("/about", function(req, res) {
+  res.render("about");
 });
 
 //post routes
