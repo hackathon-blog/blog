@@ -1,7 +1,7 @@
 {
   "name": "hackathon_blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "### User Stories",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -18,5 +18,13 @@
     "express-handlebars": "^5.1.0",
     "mongoose": "^5.10.9",
     "nodemon": "^2.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismatfarjana/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ismatfarjana/blog/issues"
+  },
+  "homepage": "https://github.com/ismatfarjana/blog#readme"
 }
