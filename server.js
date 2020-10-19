@@ -9,6 +9,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 .then(() => { console.log("Connected to MongoDB!"); })
 .catch(err => { console.error("Error connecting to mongoDB", err); });
 
+//post routes
+const postRouter = require("./routes/post_routes.js");
+app.use("/", postRouter);
+
 app.listen(port, () => {
     console.log( `Express app listening on port ${port}`);
     
