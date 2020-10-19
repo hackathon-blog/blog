@@ -1,0 +1,102 @@
+body {
+    background-color: #fbe7df;
+}
+
+header {
+    color: #12263A;
+    background-color: #06bbc1d6;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #12263a54;
+    padding: 10px 0;
+}
+
+nav {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    padding: 10px 0;
+    margin-top: 20px; 
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navs {
+    width: 45%;
+
+}
+
+article, aside, .contact {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    padding: 10px 0;
+    margin-top: 20px; 
+}
+
+.recent {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.recentHeading {
+    padding: 0;
+    margin: 0 0 0 1rem;
+}
+
+.profiles {
+    max-width: 50%;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.previewWrapper {
+    display: flex;
+    max-width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.blogPreviews {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 45%;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    padding: 10px 0;
+    margin-top: 20px; 
+
+}
+
+ footer {
+    color: #12263A;
+    background-color: #06bbc1d6;
+    border-radius: 40px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #12263a54;
+    /* line-height: 10px; */
+    /* height: 20px; */
+    padding: 5px 0;
+    margin-top: 20px; 
+}
