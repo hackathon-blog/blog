@@ -29,11 +29,15 @@ const onePostById = function(id) {
 };
 
 // update
+const updateOnePostById = function(id) {
+  return Post.findByIdAndUpdate(id);
+};
 
 // delete
 
 module.exports = {
   newPost,
   allPosts,
-  onePostById
+  onePostById,
+  updateOnePostById
 };
