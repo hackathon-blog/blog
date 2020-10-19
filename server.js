@@ -9,6 +9,7 @@ require("dotenv").config();
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+app.use(express.static('resources'))
 
 const uri = process.env.ATLAS_URI;
 mongoose
@@ -23,12 +24,19 @@ mongoose
   .catch(err => {
     console.error("Error connecting to mongoDB", err);
 });
+
+
 app.use(express.json());
 
 //home route
 app.get('/', function (req, res) {
     res.render('home');
 });
+
+app.get('/about', function (req, res) {
+  res.render('about');
+});
+
 //post routes
 const postRouter = require("./routes/post_routes.js");
 app.use("/post", postRouter);
