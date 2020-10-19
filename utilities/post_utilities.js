@@ -20,24 +20,28 @@ const newPost = function(req) {
 
 //read
 const allPosts = function(req) {
-  return Post.find();
+  return Post.find().lean();
 };
 
 // read one post
 const onePostById = function(id) {
-  return Post.findById(id);
+  return Post.findById(id).lean();
 };
 
 // update
 const updateOnePostById = function(id) {
-  return Post.findByIdAndUpdate(id);
+  return Post.findByIdAndUpdate(id).lean();
 };
 
 // delete
+const deleteOnePost = id => {
+  return PostModel.findByIdAndDelete(id).lean();
+};
 
 module.exports = {
   newPost,
   allPosts,
   onePostById,
-  updateOnePostById
+  updateOnePostById,
+  deleteOnePost
 };

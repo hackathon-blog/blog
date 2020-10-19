@@ -2,7 +2,8 @@ const {
   newPost,
   allPosts,
   onePostById,
-  updateOnePostById
+  updateOnePostById,
+  deleteOnePost
 } = require("../utilities/post_utilities");
 
 // create new post
@@ -11,6 +12,7 @@ const addNewPost = (req, res) => {
   let post = newPost(req);
   if (post) {
     res.status(201);
+    // res.render("onepost", { post: post });
     res.json(post);
   } else {
     res.status(500);
@@ -25,6 +27,7 @@ const getOnePost = (req, res) => {
       res.status(500);
       return res.json({ error: err.message });
     }
+    // res.render("onepost", { post });
     res.json(post);
   });
 };
@@ -36,13 +39,14 @@ const getAllPosts = (req, res) => {
       res.status(500);
       return res.json({ error: err.message });
     }
+    // res.render("posts", { posts: posts });
     res.json(posts);
   });
 };
 
 //update one post
 const updateOnePost = (req, res) => {
-  updateOnePostById(req.params.id).then(post => {
+  let updatedPost = updateOnePostById(req.params.id).then(post => {
     post.title = req.body.title;
     post.description = req.body.description;
 
@@ -51,11 +55,28 @@ const updateOnePost = (req, res) => {
       .then(() => res.json(post))
       .catch(err => res.status(500).json(`error: ${err}`));
   });
+
+  if (updatedPost) {
+    res.status(201);
+    // render the updated post here
+    res.json(updatedPost);
+  } else {
+    res.status(500);
+    res.send(`Error: error while updating post ${req.error}`);
+  }
+};
+
+//delete post
+const deletePost = (req, res) => {
+  deleteOnePost(req)
+    .then(res.send("Post is deleted!"))
+    .catch(err => res.status(400).json("Error:" + err));
 };
 
 module.exports = {
   addNewPost,
   getAllPosts,
   getOnePost,
-  updateOnePost
+  updateOnePost,
+  deletePost
 };
