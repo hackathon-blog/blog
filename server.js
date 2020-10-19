@@ -1,33 +1,38 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const exphbs  = require('express-handlebars');
-
-
+const exphbs = require("express-handlebars");
 const app = express();
 const port = process.env.PORT || 9991;
 require("dotenv").config();
 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs());
+app.set("view engine", "handlebars");
 
 const uri = process.env.ATLAS_URI;
 mongoose
-.connect(uri, {
+  .connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
-})
-.then(() => {
+  })
+  .then(() => {
     console.log("Connected to MongoDB!");
   })
   .catch(err => {
     console.error("Error connecting to mongoDB", err);
-});
+  });
 app.use(express.json());
 
 //home route
-app.get('/', function (req, res) {
-    res.render('home');
+app.get("/", function(req, res) {
+  res.render("home");
+});
+
+app.use(express.json());
+
+//home route
+app.get("/", function(req, res) {
+  res.render("home");
 });
 //post routes
 const postRouter = require("./routes/post_routes.js");
