@@ -1,10 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const exphbs  = require('express-handlebars');
 
-=======
+
 const app = express();
 const port = process.env.PORT || 9991;
 require("dotenv").config();
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
 
 const uri = process.env.ATLAS_URI;
 mongoose
