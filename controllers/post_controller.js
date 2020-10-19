@@ -1,7 +1,8 @@
 const {
   newPost,
   allPosts,
-  onePostById
+  onePostById,
+  updateOnePostById
 } = require("../utilities/post_utilities");
 
 // create new post
@@ -39,8 +40,22 @@ const getAllPosts = (req, res) => {
   });
 };
 
+//update one post
+const updateOnePost = (req, res) => {
+  updateOnePostById(req.params.id).then(post => {
+    post.title = req.body.title;
+    post.description = req.body.description;
+
+    post
+      .save()
+      .then(() => res.json(post))
+      .catch(err => res.status(500).json(`error: ${err}`));
+  });
+};
+
 module.exports = {
   addNewPost,
   getAllPosts,
-  getOnePost
+  getOnePost,
+  updateOnePost
 };
