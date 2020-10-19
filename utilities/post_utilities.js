@@ -2,8 +2,6 @@ const Post = require("../models/post_model");
 
 // create
 const newPost = function(req) {
-  //   let date = Date.now();
-  //   return new Post({ ...req.body, ...{ date: date } }).save();
   const title = req.body.title;
   const author = req.body.author;
   const authorId = req.body.authorId;
@@ -25,11 +23,17 @@ const allPosts = function(req) {
   return Post.find();
 };
 
+// read one post
+const onePostById = function(id) {
+  return Post.findById(id);
+};
+
 // update
 
 // delete
 
 module.exports = {
   newPost,
-  allPosts
+  allPosts,
+  onePostById
 };
