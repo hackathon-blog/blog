@@ -1,13 +1,22 @@
-<div class="recentNav">
-    <div class="recent">
-        <h4 class="recentHeading">Recent Posts:</h4>
-    </div>
-    <div class="allPostLink">
-        <a href="/post">All Posts</a>
-    </div>
-</div>
+<main>
+    <div class="recentNav">
+        <div class="recent">
+           <h4 class="recentHeading">Recent Posts:</h4>
+        </div>
 
-<div class="blogWrapper">
+        
+    {{#if user}}
+        <div class="allPostLink">
+            <a href="/post/new">Add A Post</a>
+        </div>  
+    {{/if}}
+    </div>
+         {{#if user}}
+           <p>You are now logged in!</p>
+         {{/if}}
+</main>
+
+{{!-- <div class="blogWrapper">
 {{#each posts }}
     <div class="each_post">
       <h2><a href="{{ this._id }}">{{{ this.title }}}</a></h2>
@@ -17,4 +26,4 @@
       <p>ID: {{{ this._id }}}</p>
     </div>
 {{/each}}
-</div>
+</div> --}}

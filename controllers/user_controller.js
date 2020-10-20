@@ -47,26 +47,26 @@ const currentUser = (req, res) => {
 };
 
 const updateOneUser = (req, res) => {
-    let updateUser = updateOneUserById(req.params.id).then(user => {
-      user.name = req.body.name;
-      user.password = req.body.password;
-      user.email = req.body.email;
-  
-      user
-        .save()
-        .then(() => res.json(user))
-        .catch(err => res.status(500).json(`error: ${err}`));
-    });
-  
-    if (updateUser) {
-      res.status(201);
-      // render needs to be completed - page not created yet
-      res.json(updateUser);
-    } else {
-      res.status(500);
-      res.send(`Error: error while updating user ${req.error}`);
-    }
-  };
+  let updateUser = updateOneUserById(req.params.id).then(user => {
+    user.name = req.body.name;
+    user.password = req.body.password;
+    user.email = req.body.email;
+
+    user
+      .save()
+      .then(() => res.json(user))
+      .catch(err => res.status(500).json(`error: ${err}`));
+  });
+
+  if (updateUser) {
+    res.status(201);
+    // render needs to be completed - page not created yet
+    res.json(updateUser);
+  } else {
+    res.status(500);
+    res.send(`Error: error while updating user ${req.error}`);
+  }
+};
 
 const deleteUser = (req, res) => {
   deleteOneUserById(req.params.id)
@@ -84,7 +84,7 @@ const createNewRegistration = (req, res, next) => {
       if (err) {
         next(err);
       } else {
-        res.redirect("/");
+        res.redirect("/user");
       }
     });
   };
@@ -107,8 +107,8 @@ const loginForm = (req, res) => {
 
 const login = (req, res, next) => {
   const loginFunc = passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/users/login"
+    successRedirect: "/user",
+    failureRedirect: "/user/login"
   });
   loginFunc(req, res, next);
 };

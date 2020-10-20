@@ -11,13 +11,11 @@ const app = express();
 const port = process.env.PORT || 9991;
 require("dotenv").config();
 
-
-
-
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 // app.use(express.static("resources"));
 app.use(express.static(__dirname + "/resources"));
+app.use(express.static(__dirname + "/resources/images"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -65,9 +63,6 @@ app.use(express.json());
 app.get("/", function(req, res) {
   res.render("home", { post: req.post });
 });
-// app.get("/", function(req, res) {
-//   res.render("home");
-// });
 
 app.get("/about", function(req, res) {
   res.render("about");

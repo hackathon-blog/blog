@@ -17,10 +17,9 @@ const {
 //alway pass the dynamic object key, value into the routes
 
 router.get("/", (req, res) => {
-  // console.log(req.user);
+  console.log(req.user);
   res.render("home", { user: req.user });
 });
-
 
 //all :id routes needs to stay at the bottom of other routes.
 

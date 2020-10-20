@@ -3,8 +3,8 @@ const Post = require("../models/post_model");
 // create
 const newPost = function(req) {
   const title = req.body.title;
-  const author = req.body.author;
-  const authorId = req.body.authorId;
+  const author = req.user.name;
+  const authorId = req.user._id;
   const description = req.body.description;
   const date = Date.parse(req.body.date);
   const newPost = new Post({
@@ -34,9 +34,8 @@ const updateOnePostById = function(id) {
 };
 
 //one posts of user
-const allPostsForUser = function(id) {
-  const userId = req.params.userId;
-  return Post.find(authorId, userId).lean();
+const getUsersAllPosts = userId => {
+  return Post.find({ authorId: userId }).lean();
 };
 
 // delete
@@ -49,5 +48,6 @@ module.exports = {
   allPosts,
   onePostById,
   updateOnePostById,
+  getUsersAllPosts,
   deleteOnePost
 };

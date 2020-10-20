@@ -3,26 +3,26 @@ const {
   allPosts,
   onePostById,
   updateOnePostById,
+  getUsersAllPosts,
   deleteOnePost
 } = require("../utilities/post_utilities");
 
 // form function
 const showForm = (req, res) => {
-  res.render("post/newForm");
+  res.render("post/newForm", { user: req.user });
 };
 
 // create new post
 const addNewPost = (req, res) => {
-  console.log(req.body);
-  let post = newPost(req);
-  if (post) {
-    res.status(201);
-    // res.render("onepost", { post: post });
-    res.json(post);
-  } else {
-    res.status(500);
-    res.send(`Error: ${req.error}`);
-  }
+  newPost(req)
+    .then(post => {
+      console.log(post);
+      console.log("saved", post);
+      res.redirect(`/post/${post._id}`);
+    })
+    .catch(err => {
+      res.render("post/singlePost", { error: err.message, user: req.user });
+    });
 };
 
 //get one post
@@ -34,7 +34,18 @@ const getOnePost = (req, res) => {
     }
     // res.render("onepost", { post });
     // res.json(post);
-    res.render("post/singlePost", { post: post });
+    res.render("post/singlePost", { post: post, user: req.user });
+  });
+};
+
+//get one users posts
+const usersAllPosts = (req, res) => {
+  getUsersAllPosts(req.params.userId).exec((err, posts) => {
+    if (err) {
+      res.status(500);
+      return res.json({ error: err.message });
+    }
+    res.render("post/allPosts", { posts: posts, user: req.user });
   });
 };
 
@@ -45,9 +56,7 @@ const getAllPosts = (req, res) => {
       res.status(500);
       return res.json({ error: err.message });
     }
-    // res.render("posts", { posts: posts });
-    // res.json(posts);
-    res.render("post/allPosts", { posts: posts });
+    res.render("post/allPosts", { posts: posts, user: req.user });
   });
 };
 
@@ -99,6 +108,6 @@ module.exports = {
   getAllPosts,
   getOnePost,
   updateOnePost,
-  getPostsForUser,
+  usersAllPosts,
   deletePost
 };
