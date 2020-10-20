@@ -33,6 +33,12 @@ const updateOnePostById = function(id) {
   return Post.findByIdAndUpdate(id).lean();
 };
 
+//one posts of user
+const allPostsForUser = function(id) {
+  const userId = req.params.userId;
+  return Post.find(authorId, userId).lean();
+};
+
 // delete
 const deleteOnePost = id => {
   return PostModel.findByIdAndDelete(id).lean();

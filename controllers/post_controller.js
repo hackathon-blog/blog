@@ -35,8 +35,7 @@ const getOnePost = (req, res) => {
     // res.render("onepost", { post });
     // res.json(post);
     res.render("post/singlePost", { post: post });
-
-  });                                                                
+  });
 };
 
 // get all posts
@@ -82,10 +81,11 @@ const deletePost = (req, res) => {
 };
 
 module.exports = {
-  showForm, 
+  showForm,
   addNewPost,
   getAllPosts,
   getOnePost,
   updateOnePost,
+  getPostsForUser,
   deletePost
 };

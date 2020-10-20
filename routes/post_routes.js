@@ -1,14 +1,12 @@
 const router = require("express").Router();
 const {
-  showForm, 
+  showForm,
   addNewPost,
   getAllPosts,
   getOnePost,
   updateOnePost,
   deletePost
 } = require("../controllers/post_controller.js");
-
-
 
 router.get("/new", showForm);
 router.post("/new", addNewPost);
