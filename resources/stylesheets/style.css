@@ -92,7 +92,7 @@ article, aside, .contact {
     align-items: center;
 }
 
-.each_post {
+.each_post, .single_post {
     color: #801907;
     background-color: #f89a75;
     border-radius: 40px;
