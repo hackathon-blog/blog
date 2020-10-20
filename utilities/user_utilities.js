@@ -1,15 +1,26 @@
-// const UserModel = require("../models/user_model");
+const UserModel = require("../models/user_model");
 
-// const getAllUser = () => {
-//   return UserModel.find().lean();
-// };
 
-// const getOneUserById = id => {
-//   return UserModel.findById(id).lean();
-// };
+//CRUD functions
+//lean is needed for handlebars
+const getAllUser = () => {
+  return UserModel.find().lean();
+};
 
-// const deleteOneUserById = id => {
-//   return UserModel.findByIdAndDelete(id).lean();
-// };
+const getOneUserById = () => {
+    return UserModel.findById(id).lean();
+  };
 
-// module.exports = { getAllUser, getOneUserById, deleteOneUserById };
+  const updateOneUserById = function(id) {
+    return UserModel.findByIdAndUpdate(id).lean();
+  };
+
+const deleteOneUserById = id => {
+  return UserModel.findByIdAndDelete(id).lean();
+};
+
+module.exports = { 
+    getAllUser, 
+    updateOneUserById,
+    getOneUserById, 
+    deleteOneUserById };
