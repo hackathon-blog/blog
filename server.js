@@ -3,11 +3,15 @@ const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const app = express();
 const port = process.env.PORT || 9991;
+const bodyParser = require("body-parser");
 require("dotenv").config();
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
-app.use(express.static("resources"));
+// app.use(express.static("resources"));
+app.use(express.static(__dirname + "/resources"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const uri = process.env.ATLAS_URI;
 mongoose

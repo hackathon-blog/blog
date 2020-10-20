@@ -6,6 +6,11 @@ const {
   deleteOnePost
 } = require("../utilities/post_utilities");
 
+// form function
+const showForm = (req, res) => {
+  res.render("post/newForm");
+};
+
 // create new post
 const addNewPost = (req, res) => {
   console.log(req.body);
@@ -29,7 +34,7 @@ const getOnePost = (req, res) => {
     }
     // res.render("onepost", { post });
     res.json(post);
-  });
+  });                                                                
 };
 
 // get all posts
@@ -40,7 +45,8 @@ const getAllPosts = (req, res) => {
       return res.json({ error: err.message });
     }
     // res.render("posts", { posts: posts });
-    res.json(posts);
+    // res.json(posts);
+    res.render("post/allPosts", { posts: posts });
   });
 };
 
@@ -74,6 +80,7 @@ const deletePost = (req, res) => {
 };
 
 module.exports = {
+  showForm, 
   addNewPost,
   getAllPosts,
   getOnePost,
