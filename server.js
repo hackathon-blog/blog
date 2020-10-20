@@ -61,14 +61,13 @@ app.use(express.json());
 app.use(express.json());
 
 //home route
-// app.get("/", function(req, res) {
-//   console.log(req.post)
-//   res.render("home", { post: req.post });
-// });
+
 app.get("/", function(req, res) {
-  // console.log(req.post)
-  res.render("home");
+  res.render("home", { post: req.post });
 });
+// app.get("/", function(req, res) {
+//   res.render("home");
+// });
 
 app.get("/about", function(req, res) {
   res.render("about");
