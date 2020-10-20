@@ -1,3 +1,20 @@
-<div class="recent"><h5 class="recentHeading">Recent Posts:</h4></div>
-<div class="previewWrapper"><div class="blogPreviews">blog previews will go here</div>
-<div class="blogPreviews">blog previews will go here</div></div>
+<div class="recentNav">
+    <div class="recent">
+        <h4 class="recentHeading">Recent Posts:</h4>
+    </div>
+    <div class="allPostLink">
+        <a href="/post">All Posts</a>
+    </div>
+</div>
+
+<div class="blogWrapper">
+{{#each posts }}
+    <div class="each_post">
+      <h2><a href="{{ this._id }}">{{{ this.title }}}</a></h2>
+      <p>{{{ this.author }}}</p>
+      <p>{{{ this.authorId }}}</p>
+      <p>{{{ this.description }}}</p>
+      <p>ID: {{{ this._id }}}</p>
+    </div>
+{{/each}}
+</div>
