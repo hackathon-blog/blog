@@ -1,8 +1,10 @@
-<div class="blogWrapper">
+<div class="allBlogWrapper">
 {{#each users }}
-    <div class="each_post">
-      <h2>{{{ this.name }}}</h2>
+    <div class="each_user">
+      <p>{{{ this.name }}}</p>
       <p>{{{ this.email }}}</p>
+       <h3><a href="/user/{{ this._id }}">{{{ this.title }}} Visit Profile</a></h3>
+       <h3><a href="/post/user/{{ this._id }}">{{{ this.title }}} Visit Posts</a></h3>
     </div>
 {{/each}}
 </div>

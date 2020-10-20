@@ -2,23 +2,24 @@
 <h1 id="title">Create a new Post</h1>
 </main>
 
-<form method="post" action="new">
-    <label for="title">Tile:</label>
+<form method="post" action="/post/new">
+    <label for="title">Title</label>
     <input type="text" id="title" name="title"><br>
 
-    <label for="author">Author:</label>
-    <input type="text" id="author" name="author"><br>
 
-    <label for="description">Description:</label>
+    <label for="description">Write Post Here</label>
     <input type="text" id="description" name="description"><br>
-
-    Things to be automatic later:<br>
-    <label for="authorId">Author ID:</label>
-    <input type="text" id="authorId" name="authorId"><br>
-
-    <label for="date">Date:</label>
+    
+    <label for="date">Select Date:</label>
     <input type="date" id="date" name="date"><br>
+      <input type="submit" value="Create New Post">
+<br>
+   
 
-    <input type="submit" value="Create New Post">
+
+    {{!-- <label for="date">Date:</label>
+    <input type="date" id="date" name="date"><br> --}}
+
+   
 </form>
 <hr>

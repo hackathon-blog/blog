@@ -1,3 +1,49 @@
-<header><h1><a href="/">BLOG</a></h1></header>
+<header>
+  {{#if user }}
+    <h1>
+      <a href="/user">BLOG</a>
+    </h1>
+  {{else}}
+    <h1>
+      <a href="/">BLOG</a>
+    </h1>
+  {{/if}}  
+</header>
 
-<nav><div class="navs">Log In/Dashboard</div><div class="navs">Log Out/Register</div></nav>
+<nav>
+    {{!-- <div class="navs">
+     <a href="/user/login">Log In/Dashboard</a>
+    </div> --}}
+  {{!-- <div class="navs">
+    <a href="/user/register">Log Out/Register</a>
+  </div> --}}
+
+  {{#if user }}
+    <div class="navs">
+      <a href="/">Log Out</a>
+    </div>
+  
+    <div class="navs">
+        <a href="/user/all_users">All Users</a>
+    </div>
+
+    <div class="navs">
+            <a href="/post">All Posts</a>
+    </div> 
+  {{else}}
+    <div class="navs">
+      <a href="/user/login">Log In/Dashboard</a>
+    </div>
+  {{/if}}    
+
+  {{#if user }}
+    <div class="navs">
+      <a href="/user/user_profile">Your Profile</a>
+    </div> 
+  {{else}}  
+    <div class="navs">
+      <a href="/user/register">Register To create profile</a>
+    </div>
+  {{/if}}  
+
+</nav>
