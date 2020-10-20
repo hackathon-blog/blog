@@ -204,3 +204,15 @@ footer {
   padding: 5px 0;
   margin-top: 20px;
 }
+
+.homePage {
+  width: 80%;
+}
+
+.homePageImage {
+  max-width: 90%;
+  max-height: auto;
+  padding: 0;
+  border-radius: 40px;
+}
+
