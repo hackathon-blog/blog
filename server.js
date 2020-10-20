@@ -3,15 +3,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
-
 const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 const MongoStore = require("connect-mongo")(expressSession);
 const passport = require("passport");
-
 const app = express();
 const port = process.env.PORT || 9991;
 require("dotenv").config();
+
+
+
 
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
@@ -57,17 +58,16 @@ mongoose
   });
 app.use(express.json());
 
-//home route
-app.get("/", function(req, res) {
-  res.render("home");
-});
-
 app.use(express.json());
 
 //home route
+
 app.get("/", function(req, res) {
-  res.render("home");
+  res.render("home", { post: req.post });
 });
+// app.get("/", function(req, res) {
+//   res.render("home");
+// });
 
 app.get("/about", function(req, res) {
   res.render("about");

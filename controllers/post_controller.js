@@ -51,6 +51,19 @@ const getAllPosts = (req, res) => {
   });
 };
 
+//recent posts - for home page
+// const getRecentPosts = (req, res) => {
+//   allPosts(req).exec((err, posts) => {
+//     if (err) {
+//       res.status(500);
+//       return res.json({ error: err.message });
+//     }
+//     // res.render("posts", { posts: posts });
+//     // res.json(posts);
+//     res.render("/", { posts: posts });
+//   });
+// };
+
 //update one post
 const updateOnePost = (req, res) => {
   let updatedPost = updateOnePostById(req.params.id).then(post => {

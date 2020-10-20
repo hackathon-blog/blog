@@ -24,7 +24,6 @@ nav {
     padding: 10px 0;
     margin-top: 20px; 
     display: flex;
-    display: flex;
     justify-content: space-between;
 }
 
@@ -44,19 +43,34 @@ article, aside, .contact {
     padding: 10px 0;
     margin-top: 20px; 
 }
-
+.recentNav {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+   
+}
 .recent {
+    text-align: left;
     color: #801907;
     background-color: #f89a75;
     border-radius: 40px;
-    width: 80%;
-    margin: auto;
-    text-align: left;
+    width: 60%;
     box-shadow: 10px 10px 15px 3px #80190793;
     padding: 10px 0;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
 
+.allPostLink {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    padding: 10px 0;
+    margin-top: 20px; 
+}
 .recentHeading {
     padding: 0;
     margin: 0 0 0 1rem;
@@ -86,21 +100,42 @@ article, aside, .contact {
     margin-top: 20px; 
 
 }
-.blogWrapper {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.allBlogWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px; 
 }
 
-.each_post, .single_post {
+.each_post {
     color: #801907;
     background-color: #f89a75;
     border-radius: 40px;
-    width: 80%;
+    width: 95%;
     text-align: center;
     box-shadow: 10px 10px 15px 3px #80190793;
-    padding: 10px 0;
+    margin: auto;
     margin-top: 20px; 
+}
+
+
+.blogWrapper {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px; 
+}
+
+.single_post {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    margin: auto;
+    margin-top: 20px; 
+
 }
 
  footer {
