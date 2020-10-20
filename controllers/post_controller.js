@@ -33,7 +33,9 @@ const getOnePost = (req, res) => {
       return res.json({ error: err.message });
     }
     // res.render("onepost", { post });
-    res.json(post);
+    // res.json(post);
+    res.render("post/singlePost", { post: post });
+
   });                                                                
 };
 
