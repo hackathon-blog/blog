@@ -1,7 +1,7 @@
-<div class="blogWrapper">
+<div class="allBlogWrapper">
 {{#each posts }}
     <div class="each_post">
-      <h2><a href="{{ this._id }}">{{{ this.title }}}</a></h2>
+      <h2><a href="/post/{{ this._id }}">{{{ this.title }}}</a></h2>
       <p>{{{ this.author }}}</p>
       <p>{{{ this.authorId }}}</p>
       <p>{{{ this.description }}}</p>

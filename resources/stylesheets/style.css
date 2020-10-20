@@ -100,7 +100,7 @@ article, aside, .contact {
     margin-top: 20px; 
 
 }
-.blogWrapper {
+.allBlogWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 80%;
@@ -108,11 +108,29 @@ article, aside, .contact {
     margin-top: 20px; 
 }
 
-.each_post, .single_post {
+.each_post {
     color: #801907;
     background-color: #f89a75;
     border-radius: 40px;
     width: 95%;
+    text-align: center;
+    box-shadow: 10px 10px 15px 3px #80190793;
+    margin: auto;
+    margin-top: 20px; 
+}
+
+
+.blogWrapper {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 20px; 
+}
+
+.single_post {
+    color: #801907;
+    background-color: #f89a75;
+    border-radius: 40px;
+    width: 100%;
     text-align: center;
     box-shadow: 10px 10px 15px 3px #80190793;
     margin: auto;
