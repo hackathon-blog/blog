@@ -45,7 +45,8 @@ const getAllPosts = (req, res) => {
       return res.json({ error: err.message });
     }
     // res.render("posts", { posts: posts });
-    res.json(posts);
+    // res.json(posts);
+    res.render("post/allPosts", { posts: posts });
   });
 };
 
