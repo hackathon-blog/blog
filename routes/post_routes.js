@@ -9,10 +9,10 @@ const {
 } = require("../controllers/post_controller.js");
 
 
-
 router.get("/new", showForm);
 router.post("/new", addNewPost);
 router.get("/", getAllPosts);
+// router.get("/", getRecentPosts);
 router.get("/:id", getOnePost);
 router.put("/:id", updateOnePost);
 router.delete("/:id", deletePost);
