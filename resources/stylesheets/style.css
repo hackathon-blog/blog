@@ -49,6 +49,9 @@ article,
   padding: 10px 5px;
   margin-top: 20px;
 }
+.about {
+  flex-flow: column;
+}
 
 .one_contact {
   display: flex;
