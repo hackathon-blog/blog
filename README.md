@@ -7,7 +7,7 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 ### Example Wire Frame
 | | | | |
 |---|---|---|---|
-| Mobile | Tablet | Web (not yet completed) |
+| |Mobile | Tablet | Web (not yet completed) |
 |About Page| <img src="/resources/images/mobile_about_wireframe.png" />| <img src="/resources/images/tablet_about_wireframe.png" /> | <img src="/resources/images/web_about_wireframe.png" /> |
 
 ### Tech Stack
