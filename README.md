@@ -8,8 +8,8 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 ### Example Wire Frame
 | | | | |
 |---|---|---|---|
-|| Mobile | Tablet | Web (not yet completed) |
-|About Page| <img src="/resources/images/mobile_about_wireframe.png" />| | |
+| Mobile | Tablet | Web (not yet completed) |
+|About Page| <img src="/resources/images/mobile_about_wireframe.png" />| <img src="/resources/images/tablet_about_wireframe.png" /> | <img src="/resources/images/web_about_wireframe.png" /> |
 
 ### Tech Stack
 - Heroku
@@ -30,3 +30,20 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 - Image uploads to posts and user profiles.
 - Search function.
 - So many things we didn’t have time for.
+
+### Manual Testing
+| | | | |
+|---|---|---|---|
+| Feature | Test | Outcome |
+| API endpoint - create post | Postman/Insomnia | New post present in database
+|API endpoint - update post/find post by ID | Postman/Insomnia | Correct post updated in database, can display correct post. |
+| Create post on deployed site | Manual test through deployed site | Can create post through deployed site form | 
+| API endpoint - Create user | Postman/Insomnia | New user present in database | 
+| Create user on deployed site | Manual test through deployed site | Can create user through deployed site form | 
+| Display all posts | Postman/Insomnia | Database returns all posts in JSON |
+| Display all posts | Manual test through deployed site | All posts display |
+
+
+
+
+
