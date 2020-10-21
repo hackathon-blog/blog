@@ -29,7 +29,14 @@
     <div class="navs">
       <a href="/user/login">Log In</a>
     </div>
-  {{/if}}    
+  {{/if}}   
+
+
+  {{#if user}} 
+    <div class="navs">
+       <a href="/post/usersPosts">Your Posts</a>
+    </div>
+  {{/if}}  
 
   {{#if user }}
     <div class="navs">

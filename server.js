@@ -25,7 +25,7 @@ app.use(
     secret: "World is not a fair place",
     resave: false,
     saveUninitialized: true,
-    cookie: { expires: 2000000 },
+    cookie: { expires: 3000000 },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
