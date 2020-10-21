@@ -3,7 +3,6 @@ This project was created as part of a 2.5 day Hackathon through Coder Academy. T
 
 Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 
-### User Stories
 
 ### Example Wire Frame
 | | | | |
@@ -32,8 +31,8 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 - So many things we didn’t have time for.
 
 ### Manual Testing
-| | | | |
-|---|---|---|---|
+| | | | 
+|---|---|---|
 | Feature | Test | Outcome |
 | API endpoint - create post | Postman/Insomnia | New post present in database
 |API endpoint - update post/find post by ID | Postman/Insomnia | Correct post updated in database, can display correct post. |
@@ -42,7 +41,6 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 | Create user on deployed site | Manual test through deployed site | Can create user through deployed site form | 
 | Display all posts | Postman/Insomnia | Database returns all posts in JSON |
 | Display all posts | Manual test through deployed site | All posts display |
-
 
 
 
