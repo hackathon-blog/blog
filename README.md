@@ -5,11 +5,11 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 
 ### User Stories
 
-### Wire Frames
-| | | |
-|---|---|---|
-|Homepage| | |
-|Create Blog| | |
+### Example Wire Frame
+| | | | |
+|---|---|---|---|
+|| Mobile | Tablet | Web (not yet completed) |
+|About Page| <img src="/resources/images/mobile_about_wireframe.png" />| | |
 
 ### Tech Stack
 - Heroku
