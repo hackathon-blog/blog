@@ -1,14 +1,13 @@
 <main>
-    <div class="recentNav">
-        <div class="recent">
-           <h4 class="recentHeading">Log In to Get Blogging!</h4>
-        </div>
-
-        
+    <div class="recentNav">        
     {{#if user}}
         <div class="allPostLink">
             <a href="/post/new">Add A Post</a>
-        </div>  
+        </div> 
+    {{else}}
+        <div class="recent">
+           <h4 class="recentHeading">Log In to Get Blogging!</h4>
+        </div>     
     {{/if}}
     </div>
          {{#if user}}
