@@ -1,4 +1,4 @@
-<main>
+<main class="current_user_profile">
   {{#if user }}
     <h2>
          Profile page of {{{ user.name }}}
@@ -9,6 +9,11 @@
   <div class="current_user">
     Welcome {{ user.name }}!
     This is your profile page
-  <image class="doodle" src="/doodle.png" alt="doodle of a people writing" />  
+  <image class="doodle" src="/doodle.png" alt="doodle of a people writing" /> 
+     
   </div>
+   <div class="allPostLink">
+      <a href="/post/new">Add A Post</a>
+    </div> 
+  
 </main>

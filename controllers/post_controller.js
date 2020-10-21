@@ -49,6 +49,18 @@ const usersAllPosts = (req, res) => {
   });
 };
 
+//current users all posts
+const currentUsersAllPosts = (req, res) => {
+  console.log(req.user);
+  getUsersAllPosts(req.user._id).exec((err, posts) => {
+    if (err) {
+      res.status(500);
+      return res.json({ error: err.message });
+    }
+    res.render("post/allPosts", { posts: posts, user: req.user });
+  });
+};
+
 // get all posts
 const getAllPosts = (req, res) => {
   allPosts(req).exec((err, posts) => {
@@ -109,5 +121,6 @@ module.exports = {
   getOnePost,
   updateOnePost,
   usersAllPosts,
+  currentUsersAllPosts,
   deletePost
 };

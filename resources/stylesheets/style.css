@@ -26,6 +26,7 @@ nav {
   box-shadow: 10px 10px 15px 3px #80190793;
   padding: 10px 0;
   margin-top: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -99,6 +100,7 @@ article,
   box-shadow: 10px 10px 15px 3px #80190793;
   padding: 10px 0;
   margin-top: 20px;
+  margin: auto;
 }
 .recentHeading {
   padding: 0;
@@ -152,6 +154,12 @@ article,
   margin-top: 20px;
   padding: 5px 0;
 }
+
+.emoji {
+  width: 5vw;
+  height: auto;
+}
+
 .each_user_profile,
 .current_user {
   display: flex;
@@ -165,7 +173,13 @@ article,
   box-shadow: 10px 10px 15px 3px #80190793;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 10px;
   padding: 5px 0 20px 0;
+}
+
+.current_user_profile > .allPostLink {
+  display: flex;
+  justify-content: center;
 }
 .doodle {
   margin: auto;
@@ -250,4 +264,3 @@ footer {
   padding: 0;
   border-radius: 40px;
 }
-
