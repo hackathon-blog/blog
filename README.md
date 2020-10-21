@@ -12,6 +12,16 @@ Check out our deployed <a href="https://blog-hackathon.herokuapp.com/">app</a>!
 |Create Blog| | |
 
 ### Tech Stack
+- Heroku
+- Express
+- NodeJS
+- Express-Handlebars
+- MongoDB
+- HTML
+- CSS
+- JavaScript
+- Mongoose
+- Passport
 
 ### Future Improvements
 - Add Update/Delete functions to views.
