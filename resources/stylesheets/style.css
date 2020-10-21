@@ -207,6 +207,8 @@ footer {
 
 .homePage {
   width: 80%;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .homePageImage {
